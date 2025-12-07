@@ -33,6 +33,17 @@ class Grid:
                 neighbors.append(Point(nx, ny))
         return neighbors
 
+    def get_neighbors_8_p(self, point: Point):
+        return self.get_neighbors_8(point.x, point.y)
+
+    def get_neighbors_8(self, x, y):
+        neighbors = []
+        for dx, dy in [(0, 1), (1, 0), (0, -1), (-1, 0), (1, 1), (1, -1), (-1, 1), (-1, -1)]:
+            nx, ny = x + dx, y + dy
+            if self.is_in_bounds(nx, ny):
+                neighbors.append(Point(nx, ny))
+        return neighbors
+
     def is_in_bounds(self, x, y):
         return 0 <= x < self.width() and 0 <= y < self.height()
 
