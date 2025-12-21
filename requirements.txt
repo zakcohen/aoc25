@@ -1,0 +1,2 @@
+intervaltree==3.2.0
+sortedcontainers==2.4.0
